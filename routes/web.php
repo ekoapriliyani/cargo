@@ -35,3 +35,10 @@ Route::middleware('auth')->group(function () {
     // Tambahkan rute untuk order (Orders)
     Route::resource('orders', OrderController::class); // Menambahkan resource route untuk Order
 });
+
+
+
+use App\Http\Controllers\GoogleController;
+
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('login.google');
+Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);

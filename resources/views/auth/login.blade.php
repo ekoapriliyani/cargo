@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
 </head>
 
 <body>
@@ -16,7 +18,7 @@
                     <div class="card-header">Login</div>
                     <div class="card-body">
 
-                        @if(session('success'))
+                        @if (session('success'))
                             <div class="alert alert-success">
                                 {{ session('success') }}
                             </div>
@@ -31,7 +33,6 @@
                                 </ul>
                             </div>
                         @endif
-
                         <form method="POST" action="{{ url('login') }}">
                             @csrf
                             <div class="mb-3">
@@ -45,6 +46,14 @@
                             <button type="submit" class="btn btn-primary">Login</button>
                             <a href="{{ route('register') }}" class="btn btn-link">Don't have an account? Register</a>
                         </form>
+
+                        <hr>
+                        <div class="text-center">
+                            <a href="{{ route('login.google') }}" class="btn btn-danger w-100">
+                                <i class="bi bi-google"></i> Login with Google
+                            </a>
+                        </div>
+
                     </div>
                 </div>
             </div>
