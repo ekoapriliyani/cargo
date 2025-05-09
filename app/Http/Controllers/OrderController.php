@@ -57,8 +57,8 @@ class OrderController extends Controller
     // Menampilkan daftar pesanan dengan pagination
     public function index()
     {
-        $orders = Order::with('customer')->paginate(10); 
-        return view('orders.index', compact('orders')); 
+        $orders = Order::with('customer')->paginate(10);
+        return view('orders.index', compact('orders'));
     }
 
     // Menampilkan detail order
